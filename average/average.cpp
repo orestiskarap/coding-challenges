@@ -4,9 +4,12 @@ using namespace std;
 int main(){
     ifstream infile;
     infile.open("input.in");
+    ofstream outfile;
+    outfile.open("output.out");
 
     int n;
-    long long avg;
+    float avg;
+    float sum=0;
     std::vector<long long> v;
 
     if (infile.is_open()){
@@ -19,9 +22,12 @@ int main(){
         infile.close();
     }
 
-
-    cout << "n: "<< n<<endl;
-    for (int i = 0; i<n; i++){
-        cout<< "v: " << v[i]<< endl;
+ for (int i = 0; i<n; i++){
+        sum = sum + v[i];
     }
+
+    avg = sum/n;
+
+    cout << "Average: " << avg << endl;
+    outfile << avg << endl;
 }
