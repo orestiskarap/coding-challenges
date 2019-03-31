@@ -9,10 +9,10 @@ int main(){
 
 	vector<int> v;
 	vector<float> avg;
-	
+
 	int N;
 	float sum=0;
-	
+
 
 	if (infile.is_open()){
 	        infile >> N;
@@ -24,18 +24,28 @@ int main(){
 	        infile.close();
 	}
 
-	for (int i=0; i<N; i++){
-		for (int j=1+i; j <= v[0]; j++){
-			sum = sum + v[j];
+	for (int i=1; i<=v[0]; i++){
+		sum = sum + v[i];
+	}
+		avg.push_back(sum/v[0]);
+
+	for (int i=1; i<N-v[0]; i++){
+		sum = sum - v[v[0]+i] + v[v[0]+];
 			cout<< "sum: " << sum << endl;
-			}
-			
-			avg.push_back(sum/v[0]);
-			sum = 0;
+		avg.push_back(sum/v[0]);
 	}
 
+	// for (int i=1; i<N-v[0]; i++){
+	// 		sum=sum - v[0+i] + v[v[0]+i]
+	// 	}
+	// 	// for (int k=; k<= v[0]; k--){
+	// 	// 	sum = sum - v[k];
+	// 	// }
+	// 		cout<< "sum: " << sum << endl;
+	// 		avg.push_back(sum/v[0]);
+	// }
+
 	outfile << avg.size() << endl;
-	
 	for (int i=0; i < avg.size(); i++){
 		outfile << avg[i] << " ";
 		}
