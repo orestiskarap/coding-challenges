@@ -30,23 +30,13 @@ int main(){
 		avg.push_back(sum/v[0]);
 
 	for (int i=1; i<N-v[0]; i++){
-		sum = sum - v[v[0]+i] + v[v[0]+];
-			cout<< "sum: " << sum << endl;
+		sum = sum - v[i] + v[v[0]+i];
 		avg.push_back(sum/v[0]);
 	}
-
-	// for (int i=1; i<N-v[0]; i++){
-	// 		sum=sum - v[0+i] + v[v[0]+i]
-	// 	}
-	// 	// for (int k=; k<= v[0]; k--){
-	// 	// 	sum = sum - v[k];
-	// 	// }
-	// 		cout<< "sum: " << sum << endl;
-	// 		avg.push_back(sum/v[0]);
-	// }
 
 	outfile << avg.size() << endl;
 	for (int i=0; i < avg.size(); i++){
 		outfile << avg[i] << " ";
 		}
+	outfile << endl;
 }
